@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <title>CONTACT_I</title>
+  <style>
+    table thead td { font-weight: bold; }
+  </style>
 </head>
 <body>
   <!-- <header>
@@ -29,6 +32,17 @@
       <input type="submit" value="Add Contact"></div>
   </form>
 
+  <table id="allContacts">
+    <thead>
+      <tr>
+        <td>First Name</td>
+        <td>Last Name</td>
+        <td>Email Address</td>
+        <td>Description</td>
+      </tr>
+    </thead>
+  </table>
+
   <script id="allContactsTemplate" type="text/template">
     <td><%= first_name    %></td>
     <td><%= last_name     %></td>
@@ -52,7 +66,6 @@
     App.contacts.fetch().then(function() {
       new App.Views.App({ collection: App.contacts });
     });
-
   </script>
 </body>
 </html> 

@@ -5,7 +5,7 @@ App.Views.App= Backbone.View.extend({
     var addContactView = new App.Views.AddContact({ collection: App.contacts });
 
     var allContactsView = new App.Views.Contacts({ collection: App.contacts }).render();
-    $(document.body).append(allContactsView.el);
+    $('#allContacts').append(allContactsView.el);
   }
 });
 
@@ -13,6 +13,13 @@ App.Views.App= Backbone.View.extend({
 
 App.Views.AddContact = Backbone.View.extend({
   el: '#addContact',
+
+  initialize: function() {
+    this.first_name = $('#first_name');
+    this.last_name = $('#last_name');
+    this.email_address = $('#email_address');
+    this.description = $('#description');
+  },
 
   events: {
     'submit': 'addContact'
@@ -22,16 +29,23 @@ App.Views.AddContact = Backbone.View.extend({
     e.preventDefault();
 
     var newContact = this.collection.create({
-      first_name: this.$('#first_name').val(),
-      last_name: this.$('#last_name').val(),
-      email_address: this.$('#email_address').val(),
-      description: this.$('#description').val() 
+      first_name:    this.first_name.val(),
+      last_name:     this.last_name.val(),
+      email_address: this.email_address.val(),
+      description:   this.description.val() 
     });
 
-    console.log( newContact );
+    this.clearForm();
+
     if( newContact.validationError != null ){
     alert( newContact.validationError );
    }
+  },
+  clearForm: function() {
+    this.first_name.val(''),
+    this.last_name.val(''),
+    this.email_address.val(''),
+    this.description.val('') 
   }
 });
 
@@ -40,9 +54,12 @@ App.Views.AddContact = Backbone.View.extend({
 App.Views.Contacts = Backbone.View.extend({
   tagName: 'tbody',
 
+  initialize: function() {
+    this.collection.on('add', this.addOne, this);
+  },
+
   render: function() {
     this.collection.each( this.addOne, this);
-    console.log( this.el );
     return this;
   },
 
