@@ -29,9 +29,10 @@ App.Views.AddContact = Backbone.View.extend({
     });
 
     console.log( newContact );
+    if( newContact.validationError != null ){
     alert( newContact.validationError );
+   }
   }
-
 });
 
 //All Contacts View

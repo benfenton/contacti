@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>CONTACTi</title>
+  <title>CONTACT_I</title>
 </head>
 <body>
   <!-- <header>
@@ -35,7 +35,7 @@
     <td><%= email_address %></td>
     <td><%= description   %></td>
   </script>
-   
+
   <script src="http://code.jquery.com/jquery.js"></script>
   <script src="http://underscorejs.org/underscore.js"></script>
   <script src="http://backbonejs.org/backbone.js"></script>
