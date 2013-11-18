@@ -1,15 +1,45 @@
+
 (function() {
-  window.App = {
-    Models: {},
-    Collections: {},
-    Views: {},
-    Router: {}
-  };
+   window.App = {
+     Models: {},
+     Collections: {},
+     Views: {},
+     Router: {}
+   };
+ 
+   window.vent = _.extend({}, Backbone.Events);
+ 
+   window.template = function(id) {
+     return _.template( $('#' + id).html() );
+   };
+ 
+ })();
 
-  window.vent = _.extend({}, Backbone.Events);
+////the require library is configuring paths
+//require.config({
+//    paths: {
+//                //tries to load jQuery from Google's CDN first and falls back
+//                //to load locally
+//        "jquery": ["http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min",
+//                    "libs/jquery/jquery"],
+//        "underscore": "libs/underscore/underscore-min",
+//        "backbone": "libs/backbone/backbone-min"
+//    },
+//    shim: {
+//        "backbone": {
+//                        //loads dependencies first
+//            deps: ["jquery", "underscore"],
+//                        //custom export name, this would be lowercase otherwise
+//            exports: "Backbone"
+//        }
+//    },
+//        //how long the it tries to load a script before giving up, the default is 7
+//    waitSeconds: 10
+//});
+////requiring the scripts in the first argument and then passing the library namespaces into a callback
+////you should be able to console log all of the callback arguments
+//require(['jquery', 'underscore', 'backbone', 'app'], function(jquery, _, Backbone, App){
+//    new App;
+//});
+//
 
-  window.template = function(id) {
-    return _.template( $('#' + id).html() );
-  };
-
-})();

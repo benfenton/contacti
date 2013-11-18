@@ -3,55 +3,68 @@
 <head>
   <meta charset="UTF-8">
   <title>CONTACT_i</title>
+  <link rel="stylesheet" type="text/css" href="js/libs/sass-bootstrap/dist/css/bootstrap.min.css">
+  <!-- <script data-main="js/main" src="js/libs/requirejs/require.js"></script> -->
   <style>
-    table thead td { font-weight: bold; }
-    .module { margin-bottom: 2em; }
+    #addContact { margin: 150px 0 -50px 0; text-align: center; display: none; }
+    .navbar { margin-bottom: 100px; }
+    #contacts-table { margin-top: 100px; }
   </style>
 </head>
 <body>
-  <!-- <header>
-    <h1>Contacts</h1>
-  </header> -->
-  <form id="addContact" class="module">
-    <div>
-      <label for="first_name">First Name:</label>
-      <input type="text" id="first_name" name="first_name">
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">CONTACT_I</a>
     </div>
-    <div>
-      <label for="last_name">Last Name:</label>
-      <input type="text" id="last_name" name="last_name">
-    </div>
-    <div>
-      <label for="email_address">Email Addres:</label>
-      <input type="text" id="email_address" name="email_address">
-    </div>
-    <div>
-      <label for="description">Description:</label>
-      <textarea id="description" name="description"></textarea>
-    </div>
-    <div>
-      <input type="submit" value="Add Contact"></div>
-  </form>
-
-  <table id="allContacts" class="module">
-    <thead>
-      <tr>
-        <td>First Name</td>
-        <td>Last Name</td>
-        <td>Email Address</td>
-        <td>Description</td>
-        <td>Id</td>
-        <td>Config</td>
-      </tr>
-    </thead>
-  </table>
-
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a class="new">New Contact</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </nav>
+    <form id="addContact" class="module">
+      <div>
+        <label for="first_name">First Name:</label>
+        <input type="text" id="first_name" name="first_name">
+      </div>
+      <div>
+        <label for="last_name">Last Name:</label>
+        <input type="text" id="last_name" name="last_name">
+      </div>
+      <div>
+        <label for="email_address">Email Addres:</label>
+        <input type="text" id="email_address" name="email_address">
+      </div>
+      <div>
+        <label for="description">Description:</label>
+        <textarea id="description" name="description"></textarea>
+      </div>
+      <div>
+        <input type="submit" value="Add Contact"></div>
+    </form>
+  <div id="contacts-table" class="table-responsive">
+    <table id="allContacts" class="table table-condensed">
+      <thead>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </thead>
+    </table>
+  <div>
   <div id="editContact">
-
   </div>
-
   <script id="allContactsTemplate" type="text/template">
-
     <td><%= first_name    %></td>
     <td><%= last_name     %></td>
     <td><%= email_address %></td>
@@ -59,7 +72,6 @@
     <td><a href="#contacts/<%= id %>/edit" class="edit">Edit</a></td>
     <td><a href="#contacts/<%= id %>" class="delete">Delete</a></td>
   </script>
-
   <script id="editContactTemplate" type="text/template">
     <header>
       <h1>Edit Contact: <%= first_name %> <%= last_name %></h1>
@@ -86,10 +98,10 @@
         <button class="cancel" type="button">Cancel</button>
       </form>
   </script>
-
   <script src="http://code.jquery.com/jquery.js"></script>
   <script src="http://underscorejs.org/underscore.js"></script>
   <script src="http://backbonejs.org/backbone.js"></script>
+  <script src="js/libs/sass-bootstrap/dist/js/bootstrap.min.js"></script>
   <script src="js/main.js"></script>
   <script src="js/models.js"></script>
   <script src="js/collections.js"></script>
@@ -98,11 +110,16 @@
   <script>
     new App.Router;
     Backbone.history.start();
-
     App.contacts = new App.Collections.Contacts;
     App.contacts.fetch().then(function() {
-      new App.Views.App({ collection: App.contacts });
+    new App.Views.App({ collection: App.contacts });
+    });
+  </script>
+  <script>
+    $('a.new').click(function() {
+      $( '#addContact' ).slideToggle( 'fast' );
     });
   </script>
 </body>
 </html> 
+<!--benjamin-fenton-2013-->

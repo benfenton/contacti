@@ -1,0 +1,11 @@
+{
+    "name": "RequireJS Starter",
+    "version": "2.1.9",
+    "dependencies": {
+        "jquery": "1.10.2",
+        "backbone": null,
+        "underscore": null,
+        "requirejs": null,
+        "sass-bootstrap": null
+    }
+}
