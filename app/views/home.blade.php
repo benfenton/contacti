@@ -6,7 +6,7 @@
   <link rel="stylesheet" type="text/css" href="js/libs/sass-bootstrap/dist/css/bootstrap.min.css">
   <!-- <script data-main="js/main" src="js/libs/requirejs/require.js"></script> -->
   <style>
-    #addContact { margin: 150px 0 -50px 0; text-align: center; display: none; }
+    #addContact { padding: 10px; margin: 125px 0 -50px 0; display: none; }
     .navbar { margin-bottom: 100px; }
     #contacts-table { margin-top: 100px; }
   </style>
@@ -31,19 +31,19 @@
     <form id="addContact" class="module">
       <div>
         <label for="first_name">First Name:</label>
-        <input type="text" id="first_name" name="first_name">
+        <input type="text" id="first_name" class="form-control" name="first_name">
       </div>
       <div>
         <label for="last_name">Last Name:</label>
-        <input type="text" id="last_name" name="last_name">
+        <input type="text" id="last_name" class="form-control" name="last_name">
       </div>
       <div>
         <label for="email_address">Email Addres:</label>
-        <input type="text" id="email_address" name="email_address">
+        <input type="text" id="email_address" class="form-control" name="email_address">
       </div>
       <div>
         <label for="description">Description:</label>
-        <textarea id="description" name="description"></textarea>
+        <textarea id="description"  class="form-control" name="description" ></textarea>
       </div>
       <div>
         <input type="submit" class="addContact btn btn-default" value="Add Contact"></div>
