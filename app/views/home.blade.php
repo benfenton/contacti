@@ -46,7 +46,7 @@
         <textarea id="description" name="description"></textarea>
       </div>
       <div>
-        <input type="submit" value="Add Contact"></div>
+        <input type="submit" class="addContact btn btn-default" value="Add Contact"></div>
     </form>
   <div id="contacts-table" class="table-responsive">
     <table id="allContacts" class="table table-condensed">
@@ -70,13 +70,13 @@
     <td><%= email_address %></td>
     <td><%= description   %></td>
     <td><a href="#contacts/<%= id %>/edit" class="edit">Edit</a></td>
-    <td><a href="#contacts/<%= id %>" class="delete">Delete</a></td>
+    <td><a href="#contacts/<%= id %>" class="delete">X</a></td>
   </script>
   <script id="editContactTemplate" type="text/template">
     <header>
       <h1>Edit Contact: <%= first_name %> <%= last_name %></h1>
     </header>
-    <form id="editContact" class="module">
+    <form id="editContact" class="">
       <div>
         <label for="edit_first_name">First Name:</label>
         <input type="text" id="edit_first_name" name="edit_first_name" value="<%= first_name %>">
@@ -116,7 +116,7 @@
     });
   </script>
   <script>
-    $('a.new').click(function() {
+    $('a.new, .addContact').click(function() {
       $( '#addContact' ).slideToggle( 'fast' );
     });
   </script>

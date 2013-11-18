@@ -46,7 +46,7 @@ App.Views.AddContact = Backbone.View.extend({
     }, { wait: true });
     
     this.clearForm();
-    this.slideToggle();
+    this.slideToggle( 'fast' );
   },
 
   clearForm: function() {

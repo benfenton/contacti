@@ -6,9 +6,6 @@
 	"require": {
 		"laravel/framework": "4.0.*"
 	},
-	"require": {
-    "jlong/sass-bootstrap": "dev-master"
-		},
 	"autoload": {
 		"classmap": [
 			"app/commands",
