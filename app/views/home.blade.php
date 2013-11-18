@@ -2,22 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
   <title>CONTACT_i</title>
   <link rel="stylesheet" type="text/css" href="js/libs/sass-bootstrap/dist/css/bootstrap.css">
   <!-- <script data-main="js/main" src="js/libs/requirejs/require.js"></script> -->
   <style>
-    
-    .navbar {  }
     #addContact { padding: 0 10px 35px 10px; display: none; }
     #contacts-table { margin-top: -20px;}
-    button.new { margin: 10px; }
+    button.new { float: right; margin: 10px 10px 10px 30px; }
   </style>
 </head>
 <body>
   <nav class="navbar navbar-default navbar-static-top" role="navigation">
     <div class="navbar-header">
-      <a class="navbar-brand">CONTACT_I</a>
-      <button style="float:right;" class="new btn btn-primary">New Contact</button>
+      <div class="navbar-brand">CONTACT_I</div>
+      <button class="new btn btn-success">New Contact</button>
     </div>
   </nav>
     <form id="addContact" class="module">
@@ -39,7 +38,7 @@
       </div>
       <br />
       <div>
-        <input type="submit" class="addContact btn btn-default" value="Add Contact"></div>
+        <input type="submit" class="addContact btn btn-warning" value="Add Contact"></div>
     </form>
     <div id="contacts-table" class="table-responsive">
     <table id="allContacts" class="table table-condensed">
