@@ -34,7 +34,7 @@ class ContactsController extends \BaseController {
 		$email_address = Input::get('email_address');
 		$description = Input::get('description');
 
-		Contact::create(array(
+		return Contact::create(array(
 			'first_name' => $first_name,
 			'last_name' => $last_name,
 			'email_address' => $email_address,
@@ -95,7 +95,7 @@ class ContactsController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+		Contact::find($id)->delete();
 	}
 
 }
