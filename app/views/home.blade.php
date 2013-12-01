@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width">
   <title>CONTACT_i</title>
   <link rel="stylesheet" type="text/css" href="js/libs/sass-bootstrap/dist/css/bootstrap.css">
-  <!-- <script data-main="js/main" src="js/libs/requirejs/require.js"></script> -->
+  <script data-main="js/main" src="js/libs/requirejs/require.js"></script> 
   <style>
     #addContact { padding: 0 10px 35px 10px; display: none; }
     #contacts-table { margin-top: -20px;}
@@ -15,7 +15,7 @@
 <body>
   <nav class="navbar navbar-default navbar-static-top" role="navigation">
     <div class="navbar-header">
-      <div class="navbar-brand">CONTACT_I</div>
+      <div class="navbar-brand">CONTACT_i</div>
       <button class="new btn btn-success">New Contact</button>
     </div>
   </nav>
@@ -38,12 +38,12 @@
       </div>
       <br />
       <div>
-        <input type="submit" class="addContact btn btn-warning" value="Add Contact"></div>
+        <input type="submit" class="addContact btn btn-warning" value="Add Contact">
+      </div>
     </form>
     <div id="contacts-table" class="table-responsive">
     <table id="allContacts" class="table table-condensed">
     </table>
-  <div>
   <div id="editContact">
   </div>
   <script id="allContactsTemplate" type="text/template">
@@ -85,7 +85,7 @@
       <br />
       <div>
         <button class="cancel btn btn-default" type="button" data-dismiss="modal">Cancel</button>
-        <input type="submit" class="btn btn-primary"  value="Save Changes"></input>
+        <button type="submit" class="btn btn-primary"  value="Save Changes"></button>
       </div>
       </form>
       </div>
@@ -93,11 +93,10 @@
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
   </script>
-  <script src="http://code.jquery.com/jquery.js"></script>
+  <!-- <script src="http://code.jquery.com/jquery.js"></script>
   <script src="http://underscorejs.org/underscore.js"></script>
   <script src="http://backbonejs.org/backbone.js"></script>
-  <script src="js/libs/sass-bootstrap/dist/js/bootstrap.min.js"></script>
-  <script src="js/main.js"></script>
+    <script src="js/main.js"></script>
   <script src="js/models.js"></script>
   <script src="js/collections.js"></script>
   <script src="js/views.js"></script>
@@ -109,12 +108,13 @@
     App.contacts.fetch().then(function() {
     new App.Views.App({ collection: App.contacts });
     });
-  </script>
+  </script> 
   <script>
     $('button.new, .addContact').click(function() {
       $( '#addContact' ).slideToggle( 'fast' );
     });
-  </script>
+  </script> -->
+
 </body>
 </html> 
 <!--benjamin-fenton-2013-->

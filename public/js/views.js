@@ -1,27 +1,28 @@
+define(['jquery', 'underscore','backbone', 'models', 'collections'], function(jquery, _, Backbone, Models, Collections){
 ////////////////////////
 /// Global App View ///
 //////////////////////
 
-App.Views.App= Backbone.View.extend({
-  initialize: function() {
-    vent.on('contact:edit', this.editContact, this);
-    var addContactView = new App.Views.AddContact({ collection: App.contacts });
-
-    var allContactsView = new App.Views.Contacts({ collection: App.contacts }).render();
-    $('#allContacts').append(allContactsView.el);
-  },
-
-  editContact: function(contact) {
-    var editContactView = new App.Views.EditContact({ model: contact });
-    $('#editContact').html(editContactView.el); 
-  }
-});
+//App= Backbone.View.extend({
+//  initialize: function() {
+//    vent.on('contact:edit', this.editContact, this);
+//    var addContactView = new AddContact({ collection: App.contacts });
+//
+//    var allContactsView = new Contacts({ collection: App.contacts }).render();
+//    $('#allContacts').append(allContactsView.el);
+//  },
+//
+//  editContact: function(contact) {
+//    var editContactView = new EditContact({ model: contact });
+//    $('#editContact').html(editContactView.el); 
+//  }
+//});
 
 /////////////////////////
 /// ADD Contact View ///
 ///////////////////////
 
-App.Views.AddContact = Backbone.View.extend({
+var AddContactView = Backbone.View.extend({
   el: '#addContact',
   
   initialize: function() {
@@ -57,11 +58,13 @@ App.Views.AddContact = Backbone.View.extend({
   }
 });
 
+return AddContactView;
+
 //////////////////////////
 /// Edit Contact View ///
 ////////////////////////
 
-App.Views.EditContact = Backbone.View.extend({
+var EditContact = Backbone.View.extend({
 
   template: template('editContactTemplate'),
 
@@ -106,11 +109,12 @@ App.Views.EditContact = Backbone.View.extend({
 
 });
 
+return EditContact
+
 //////////////////////////
 /// All Contacts View ///
 ////////////////////////
-
-App.Views.Contacts = Backbone.View.extend({
+var Contacts = Backbone.View.extend({
   tagName: 'tbody',
 
   initialize: function() {
@@ -123,16 +127,17 @@ App.Views.Contacts = Backbone.View.extend({
   },
 
   addOne: function(contact) {
-    var contactView = new App.Views.Contact({ model: contact});
+    var contactView = new Contact({ model: contact});
     this.$el.append(contactView.render().el);
   }
 });
 
+return Contacts;
 ////////////////////////////
 /// Single Contact View ///
 //////////////////////////
 
-App.Views.Contact = Backbone.View.extend({
+var Contact = Backbone.View.extend({
   tagName: 'tr',
 
   template: template('allContactsTemplate'),
@@ -163,4 +168,8 @@ App.Views.Contact = Backbone.View.extend({
   unrender: function() {
     this.remove();
   }
+});
+
+return Contact;
+
 });
