@@ -16,34 +16,35 @@
   <nav class="navbar navbar-default navbar-static-top" role="navigation">
     <div class="navbar-header">
       <div class="navbar-brand">CONTACT_i</div>
-      <button class="new btn btn-success">New Contact</button>
+      <button class="new btn btn-default">New Contact</button>
     </div>
   </nav>
-    <form id="addContact" class="module">
-      <div>
-        <label for="first_name">First Name:</label>
-        <input type="text" id="first_name" class="form-control" name="first_name">
-      </div>
-      <div>
-        <label for="last_name">Last Name:</label>
-        <input type="text" id="last_name" class="form-control" name="last_name">
-      </div>
-      <div>
-        <label for="email_address">Email Addres:</label>
-        <input type="text" id="email_address" class="form-control" name="email_address">
-      </div>
-      <div>
-        <label for="description">Description:</label>
-        <textarea id="description"  class="form-control" name="description" ></textarea>
-      </div>
-      <br />
-      <div>
-        <input type="submit" class="addContact btn btn-warning" value="Add Contact">
-      </div>
-    </form>
-    <div id="contacts-table" class="table-responsive">
+  <form id="addContact" class="module">
+    <div>
+      <label for="first_name">First Name:</label>
+      <input type="text" id="first_name" class="form-control" name="first_name">
+    </div>
+    <div>
+      <label for="last_name">Last Name:</label>
+      <input type="text" id="last_name" class="form-control" name="last_name">
+    </div>
+    <div>
+      <label for="email_address">Email Addres:</label>
+      <input type="text" id="email_address" class="form-control" name="email_address">
+    </div>
+    <div>
+      <label for="description">Description:</label>
+      <textarea id="description"  class="form-control" name="description" ></textarea>
+    </div>
+    <br />
+    <div>
+      <input type="submit" class="addContact btn btn-default" value="Add Contact">
+    </div>
+  </form>
+  <div id="contacts-table" class="table-responsive">
     <table id="allContacts" class="table table-condensed">
     </table>
+  </div>
   <div id="editContact">
   </div>
   <script id="allContactsTemplate" type="text/template">
@@ -84,37 +85,15 @@
       </div>
       <br />
       <div>
-        <button class="cancel btn btn-default" type="button" data-dismiss="modal">Cancel</button>
-        <button type="submit" class="btn btn-primary"  value="Save Changes"></button>
+        <button type="cancel" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        <input type="submit" class="btn btn-primary"  value="Save Changes">
       </div>
       </form>
       </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
   </script>
-  <!-- <script src="http://code.jquery.com/jquery.js"></script>
-  <script src="http://underscorejs.org/underscore.js"></script>
-  <script src="http://backbonejs.org/backbone.js"></script>
-    <script src="js/main.js"></script>
-  <script src="js/models.js"></script>
-  <script src="js/collections.js"></script>
-  <script src="js/views.js"></script>
-  <script src="js/router.js"></script>
-  <script>
-    new App.Router;
-    Backbone.history.start();
-    App.contacts = new App.Collections.Contacts;
-    App.contacts.fetch().then(function() {
-    new App.Views.App({ collection: App.contacts });
-    });
-  </script> 
-  <script>
-    $('button.new, .addContact').click(function() {
-      $( '#addContact' ).slideToggle( 'fast' );
-    });
-  </script> -->
-
 </body>
 </html> 
 <!--benjamin-fenton-2013-->
