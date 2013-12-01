@@ -21,9 +21,8 @@ define([
       }
   });
   var initialize = function() {
-    console.log('we are here');
   
-    var app_router = new AppRouter;
+    new AppRouter;
    
     Backbone.history.start();
   };

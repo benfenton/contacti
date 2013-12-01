@@ -11,20 +11,16 @@ define([
     tagName: 'tbody',
   
     initialize: function() {
-      this.collection = new ContactsCollection();
       this.collection.fetch();
       this.collection.on('add', this.addOne, this);
-      console.log('one');
     },
   
     render: function() {
-      console.log('two');
       this.collection.each(this.addOne, this);
       return this;
     },
   
     addOne: function(Contact) {
-      console.log('three');
       var contactView = new ContactView({ model: Contact});
       this.$el.append(contactView.render().el);
     }

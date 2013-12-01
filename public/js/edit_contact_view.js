@@ -8,7 +8,6 @@ define([
     template: template('editContactTemplate'),
   
     initialize: function() {
-      console.log('edit initialize');
       this.render();
   
       this.form = this.$('form');
@@ -19,12 +18,12 @@ define([
     },
   
     events: {
-      'submit form': 'submit',
-      'click button.cancel': 'cancel'
+      'submit': 'submit',
+      'click cancel': 'cancel'
     },
   
     submit: function(e) {
-      e.preventDefault();
+     e.preventDefault();
       
       this.model.save({ 
         first_name: this.first_name.val(),
@@ -32,8 +31,10 @@ define([
         email_address: this.email_address.val(),
         description: this.description.val()
       });
-  
+
       this.remove();
+      
+      $('.modal-backdrop').fadeOut('fast');
     },
   
     cancel: function() {
