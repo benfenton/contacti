@@ -8,6 +8,7 @@
         "requirejs": null,
         "sass-bootstrap": null,
         "requirejs-text": null,
-        "require-css": null
+        "require-css": null,
+        "magnific-popup": null
     }
 }

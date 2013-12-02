@@ -8,7 +8,6 @@
     template: _.template(contactView),
   
     initialize: function() {
-      //window.vent = _.extend({}, Backbone.Events);
       this.model.on('destroy', this.unrender, this);
       this.model.on('change', this.render, this);
     },

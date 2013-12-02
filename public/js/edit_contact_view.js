@@ -20,7 +20,7 @@ define([
   
     events: {
       'submit': 'submit',
-      'click cancel': 'cancel'
+      'click .cancel': 'cancel'
     },
   
     submit: function(e) {
@@ -32,10 +32,11 @@ define([
         email_address: this.email_address.val(),
         description: this.description.val()
       });
-
+    
       this.remove();
 
-      $('.modal-backdrop').remove();
+      
+
     },
   
     cancel: function() {
