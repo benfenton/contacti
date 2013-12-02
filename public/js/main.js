@@ -1,27 +1,11 @@
-
-//(function() {
-//   window.App = {
-//     Models: {},
-//     Collections: {},
-//     Views: {},
-//     Router: {}
-//   };
-// 
-//   window.vent = _.extend({}, Backbone.Events);
-// 
-//   window.template = function(id) {
-//     return _.template( $('#' + id).html() );
-//   };
-// 
-// })();
-
 ////the require library is configuring paths
 require.config({
     paths: {
         "jquery": "libs/jquery/jquery",
         "bootstrap": "libs/sass-bootstrap/dist/js/bootstrap",
         "underscore": "libs/underscore/underscore-min",
-        "backbone": "libs/backbone/backbone-min"
+        "backbone": "libs/backbone/backbone-min",
+        "text": "libs/requirejs-text/text"
     },
     shim: {
         "backbone": {
@@ -47,10 +31,14 @@ require.config({
 });
 ////requiring the scripts in the first argument and then passing the library namespaces into a callback
 ////you should be able to console log all of the callback arguments
-require(['jquery', 'underscore', 'backbone', 'bootstrap', 'app'], function($, _, Backbone, BootJS, App){
-        
-    new App;
-
+require([
+  'jquery', 
+  'underscore', 
+  'backbone', 
+  'bootstrap',
+  'app'
+], function($, _, Backbone, BootJS, App){
+  new App;
 });
 
 

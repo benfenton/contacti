@@ -1,11 +1,12 @@
 define([
   'backbone',
-  'collections/contacts'
-], function(Backbone, ContactsCollection){
+  'collections/contacts',
+  'text!templates/edit.html'
+], function(Backbone, ContactsCollection, editContactTemplate){
   var EditContact = Backbone.View.extend({
     el: '#editContact',
 
-    template: template('editContactTemplate'),
+    template: _.template(editContactTemplate),
   
     initialize: function() {
       this.render();
@@ -33,8 +34,8 @@ define([
       });
 
       this.remove();
-      
-      $('.modal-backdrop').fadeOut('fast');
+
+      $('.modal-backdrop').remove();
     },
   
     cancel: function() {

@@ -6,6 +6,8 @@
         "backbone": null,
         "underscore": null,
         "requirejs": null,
-        "sass-bootstrap": null
+        "sass-bootstrap": null,
+        "requirejs-text": null,
+        "require-css": null
     }
 }

@@ -1,10 +1,11 @@
  define([
-  'backbone', 
-], function(Backbone){ 
+  'backbone',
+  'text!templates/contact.html'
+], function(Backbone, contactView){ 
   var Contact = Backbone.View.extend({
     tagName: 'tr',
   
-    template: template('allContactsTemplate'),
+    template: _.template(contactView),
   
     initialize: function() {
       //window.vent = _.extend({}, Backbone.Events);
