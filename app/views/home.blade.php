@@ -5,11 +5,23 @@
   <meta name="viewport" content="width=device-width">
   <title>CONTACT_i</title>
   <script data-main="js/main" src="js/libs/requirejs/require.js"></script> 
-  <link rel="stylesheet" type="text/css" href="js/libs/sass-bootstrap/dist/css/bootstrap.css">
+  <!--<link rel="stylesheet" type="text/css" href="js/libs/sass-bootstrap/dist/css/bootstrap.css"> -->
+  <link rel="stylesheet" type="text/css" href="js/libs/magnific-popup/dist/magnific-popup.css">
   <style>
     button.new { float: right; margin: 10px 10px 10px 30px; }
     #addContact { padding: 0 10px 35px 10px; display: none; }
     #contacts-table { margin-top: -20px; }
+    .white-popup {
+      position: relative;
+      background: #FFF;
+      padding: 20px;
+      width: auto;
+      max-width: 500px;
+      margin: 20px auto;
+    }
+    .mfp-close {
+      opacity: 0;
+    }
   </style>
 </head>
 <body>
@@ -25,7 +37,7 @@
     <table id="allContacts" class="table table-condensed">
     </table>
   </div>
-  <div id="editContact">
+  <div id="editContact" class="white-popup">
   </div>
 </body>
 </html> 

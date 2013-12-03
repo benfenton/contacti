@@ -2,25 +2,25 @@ define([
   'backbone',
   'collections/contacts',
   'add_contact_view',
+  'edit_contact_view',
   'contacts_view',
   'contact_view',
   'models/contact'
-], function(Backbone, ContactsCollection, AddContactView, ContactsView, ContactView, Contact){
+], function(Backbone, ContactsCollection, AddContactView, EditContactView, ContactsView, ContactView, Contact){
   var AppRouter = Backbone.Router.extend({
     routes: {
-      '': 'index',
+      '/#': 'index'
     },
     index: function () {
-      var contactsCollection = new ContactsCollection();
-      var addContactView = new AddContactView({ collection: contactsCollection });
-      allContactsView = new ContactsView({ collection:  contactsCollection }).render();
+     
     }
   });
   var initialize = function() {
-  
-    new AppRouter;
-   
-    Backbone.history.start();
+    window.appRouter = new AppRouter().navigate('/#');
+    Backbone.history.start( {root: ''} );
+    var contactsCollection = new ContactsCollection();
+    var addContactView = new AddContactView({ collection: contactsCollection });
+    allContactsView = new ContactsView({ collection:  contactsCollection }).render();
   };
   return {
     initialize: initialize

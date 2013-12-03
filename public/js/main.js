@@ -26,20 +26,22 @@ require.config({
             exports: "BootJS"
         },
         "magpop": {
+            deps: ["jquery"],
+
             exports: "MagPop"
         }
+       
     },
     waitSeconds: 10
 });
 
 require([
-  'jquery', 
-  'underscore', 
+  
   'backbone', 
   'bootstrap',
   'magpop',
   'app'
-], function($, _, Backbone, BootJS, MagPop, App){
+], function(Backbone, BootJS, MagPop, App){
   new App;
 });
 

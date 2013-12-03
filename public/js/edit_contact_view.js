@@ -10,7 +10,6 @@ define([
   
     initialize: function() {
       this.render();
-  
       this.form = this.$('form');
       this.first_name = this.form.find('#edit_first_name');
       this.last_name = this.form.find('#edit_last_name');
@@ -24,26 +23,28 @@ define([
     },
   
     submit: function(e) {
-     e.preventDefault();
-      
+      e.preventDefault();
       this.model.save({ 
         first_name: this.first_name.val(),
         last_name: this.last_name.val(),
         email_address: this.email_address.val(),
         description: this.description.val()
       });
-    
-      this.remove();
-
+      appRouter.navigate('');
+      $('#editContactForm').remove();
+      $.magnificPopup.close();
       
-
     },
   
-    cancel: function() {
-      this.remove();
+    cancel: function(e) {
+      e.preventDefault();
+      appRouter.navigate('');
+      $('#editContactForm').remove();
+      $.magnificPopup.close();
     },
   
     render: function() {
+      
       var html = this.template( this.model.toJSON() );
 
       this.$el.html(html);

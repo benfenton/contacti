@@ -1,5 +1,6 @@
  define([
   'backbone',
+
   'text!templates/contact.html'
 ], function(Backbone, contactView){ 
   var Contact = Backbone.View.extend({
@@ -16,13 +17,15 @@
       'click a.delete': 'deleteContact',
       'click a.edit'  : 'editContact'
     },
-  
-    deleteContact: function() {
+
+    deleteContact: function(e) {
+      e.preventDefault();
+      appRouter.navigate('/#', {trigger: true});
       this.model.destroy();
     },
   
     editContact: function() {
-      vent.trigger('contact:edit', this.model);
+     vent.trigger('contact:edit', this.model);
     },
   
     render: function() {

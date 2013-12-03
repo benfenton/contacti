@@ -4,19 +4,18 @@ define([
   'models/contact',
   'edit_contact_view',
   'add_contact_view',
-  'temp'
+  'temp',
 ], function(Backbone, Router, Contact, EditContactView, AddContactView, Template){
   var App = Backbone.View.extend({
     initialize: function(){
-      window.vent = _.extend({}, Backbone.Events);
-
-      vent.on('contact:edit', this.editContact, this);
-
       Router.initialize();
-
+      console.log('Router:' + typeof Router);
+      window.vent = _.extend({}, Backbone.Events);
+      vent.on('contact:edit', this.editContact, this);
       $('button.new, .addContact').click(function() {
         $( '#addContact' ).slideToggle( 'fast' );
       });
+
     },
   
     events: {
@@ -25,15 +24,22 @@ define([
 
     editContact: function(Contact) {
       var editContactView = new EditContactView({ model: Contact });
-      
       $('#editContact').append(editContactView); 
+      $.magnificPopup.open({
+        items: {
+          src: '#editContact',
+          type: 'inline',
+          showCloseBtn: 'false'
+        }
+      });
+
+      
     },
 
     newContact: function() {
-      console.log('you are here');
       var addContactView = new AddContactView();
 
-      $('#addContact').append(editContactView);
+      $('#addContact').append(addContactView);
     }
   });
   return App;
