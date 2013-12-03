@@ -8,8 +8,9 @@
       <link rel="stylesheet" type="text/css" href="js/libs/sass-bootstrap/dist/css/bootstrap.css"> 
       <link rel="stylesheet" type="text/css" href="js/libs/magnific-popup/dist/magnific-popup.css">
       <style>
+        .navbar { margin-bottom: 35px; } 
         button.new { float: right; margin: 10px 10px 10px 30px; }
-        #addContact { padding: 0 10px 35px 10px; display: none; }
+        #addContact { padding: 0 10px 35px 10px;display: none; }
         #contacts-table { margin-top: -20px; }
         .white-popup {
           position: relative;
