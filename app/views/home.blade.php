@@ -3,13 +3,21 @@
     <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>CONTACT_i</title>
+      <title>Contacti</title>
       <script data-main="js/main" src="js/libs/requirejs/require.js"></script> 
-      <link rel="stylesheet" type="text/css" href="js/libs/sass-bootstrap/dist/css/bootstrap.css"> 
       <link rel="stylesheet" type="text/css" href="js/libs/magnific-popup/dist/magnific-popup.css">
+      <link rel="stylesheet" type="text/css" href="js/libs/sass-bootstrap/dist/css/bootstrap.css">
       <style>
-        .navbar { margin-bottom: 35px; } 
-        button.new { float: right; margin: 10px 10px 10px 30px; }
+        .navbar { margin-bottom: 30px; } 
+        .navbar-brand { 
+          color: rgba(66, 139, 202, 1) !important;
+          font-size: 2em; 
+          font-weight: bold; 
+          text-shadow:  1px 1px 1px #444;
+
+        }
+        .navbar-brand span { font-size: .67em; margin: 0 0 0 3px; }
+        button.new { margin: 10px 10px 10px 30px; }
         #addContact { padding: 0 10px 35px 10px;display: none; }
         #contacts-table { margin-top: -20px; }
         .white-popup {
@@ -17,7 +25,7 @@
           background: #FFF;
           padding: 20px;
           width: auto;
-          max-width: 250px;
+          max-width: 300px;
           margin: 20px auto;
         }
         .mfp-close {
@@ -28,20 +36,18 @@
     <body>
       <nav class="navbar navbar-default navbar-static-top" role="navigation">
         <div class="navbar-header">
-          <div class="navbar-brand">CONTACT_i</div>
-          <button class="new btn btn-default">New Contact</button>
+          <div class="navbar-brand">Contact<span class="glyphicon glyphicon-user"></span></div>
+          <button class="new btn btn-default pull-right">New Contact</button>
         </div>
       </nav>
-     
-        <div id="addContact">
-        </div>
-        <div id="contactsTable">
-          <table id="allContacts" class="table table-striped">
-          </table>
-        </div>
-        <div id="editContact" class="white-popup">
-        </div>
-
-    </body>
+      <div id="addContact">
+      </div>
+      <div id="contactsTable">
+        <table id="allContacts" class="table table-condensed table-striped">
+        </table>
+      </div>
+      <div id="editContact" class="white-popup">
+      </div>
+    </dy>
   </html> 
 <!-- ->>>--Benjamin-Fenton-2013-->
