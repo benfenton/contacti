@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CONTACT_i</title>
   <script data-main="js/main" src="js/libs/requirejs/require.js"></script> 
   <!--<link rel="stylesheet" type="text/css" href="js/libs/sass-bootstrap/dist/css/bootstrap.css"> -->
@@ -16,7 +16,7 @@
       background: #FFF;
       padding: 20px;
       width: auto;
-      max-width: 500px;
+      max-width: 250px;
       margin: 20px auto;
     }
     .mfp-close {
