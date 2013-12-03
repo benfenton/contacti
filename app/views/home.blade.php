@@ -35,7 +35,7 @@
         <div id="addContact">
         </div>
         <div id="contactsTable">
-          <table id="allContacts">
+          <table id="allContacts" class="table table-striped">
           </table>
         </div>
         <div id="editContact" class="white-popup">
