@@ -4,7 +4,10 @@ define([
 ], function(Backbone, Contact){
   var ContactCollection = Backbone.Collection.extend({
     model: Contact,
-    url: '/contacts'
+    url: '/contacts',
+    comparator: function(item) {
+      return item.get('first_name');
+    }
   });
   return ContactCollection;
 });
