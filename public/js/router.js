@@ -1,10 +1,10 @@
 define([
   'backbone',
   'collections/contacts',
-  'add_contact_view',
-  'edit_contact_view',
-  'contacts_view',
-  'contact_view',
+  'views/add_contact_view',
+  'views/edit_contact_view',
+  'views/contacts_view',
+  'views/contact_view',
   'models/contact'
 ], function(Backbone, ContactsCollection, AddContactView, EditContactView, ContactsView, ContactView, Contact){
   var AppRouter = Backbone.Router.extend({

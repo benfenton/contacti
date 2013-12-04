@@ -2,8 +2,8 @@ define([
   'backbone',
   'router',
   'models/contact',
-  'edit_contact_view',
-  'add_contact_view',
+  'views/edit_contact_view',
+  'views/add_contact_view',
   'temp',
 ], function(Backbone, Router, Contact, EditContactView, AddContactView, Template){
   var App = Backbone.View.extend({

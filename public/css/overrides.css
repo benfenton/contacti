@@ -3,7 +3,7 @@
   color: rgba(66, 139, 202, 1) !important;
   font-size: 2em; 
   font-weight: bold; 
-  text-shadow:  1px 1px 1px
+  text-shadow:  1px 1px 1px #666;
 }
 .navbar-brand span { font-size: .67em; margin: 0 0 0 3px; }
 button.new { margin: 10px 10px 10px 30px; }

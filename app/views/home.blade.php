@@ -24,6 +24,6 @@
       </div>
       <div id="editContact" class="white-popup">
       </div>
-    </dy>
+    </div>
   </html> 
 <!-- ->>>--Benjamin-Fenton-2013-->
