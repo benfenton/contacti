@@ -7,31 +7,7 @@
       <script data-main="js/main" src="js/libs/requirejs/require.js"></script> 
       <link rel="stylesheet" type="text/css" href="js/libs/magnific-popup/dist/magnific-popup.css">
       <link rel="stylesheet" type="text/css" href="js/libs/sass-bootstrap/dist/css/bootstrap.css">
-      <style>
-        .navbar { margin-bottom: 30px; } 
-        .navbar-brand { 
-          color: rgba(66, 139, 202, 1) !important;
-          font-size: 2em; 
-          font-weight: bold; 
-          text-shadow:  1px 1px 1px #444;
-
-        }
-        .navbar-brand span { font-size: .67em; margin: 0 0 0 3px; }
-        button.new { margin: 10px 10px 10px 30px; }
-        #addContact { padding: 0 10px 35px 10px;display: none; }
-        #contacts-table { margin-top: -20px; }
-        .white-popup {
-          position: relative;
-          background: #FFF;
-          padding: 20px;
-          width: auto;
-          max-width: 300px;
-          margin: 20px auto;
-        }
-        .mfp-close {
-          opacity: 0;
-        }
-      </style>
+      <link rel="stylesheet" type="text/css" href="css/overrides.css">
     </head>
     <body>
       <nav class="navbar navbar-default navbar-static-top" role="navigation">
